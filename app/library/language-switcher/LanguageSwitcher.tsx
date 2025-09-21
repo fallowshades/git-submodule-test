@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next"
 import { useLocation } from "react-router"
-import { supportedLanguages } from "~/localization/resource"
+import { supportedLanguages } from "~/routes/localization/resource"
 import { Link } from "../link"
 
 const LanguageSwitcher = () => {

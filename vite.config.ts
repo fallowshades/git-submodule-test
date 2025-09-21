@@ -30,8 +30,8 @@ export default defineConfig({
 		}),
 		tsconfigPaths(),
 		iconsSpritesheet({
-			inputDir: "./resources/icons",
-			outputDir: "./app/library/icon/icons",
+			inputDir: "./app/routes/resources/icons",
+			outputDir: "./app/routes/library/icon/icons",
 			fileName: "icon.svg",
 			withTypes: true,
 			formatter: "biome",
@@ -42,4 +42,8 @@ export default defineConfig({
 		// biome-ignore lint/style/noProcessEnv: Its ok to use process.env here
 		port: Number(process.env.PORT || 4280),
 	},
+	  optimizeDeps: {
+    exclude: ["virtual:react-router/server-build"],
+		include: ["remix-auth-oauth2"],
+  },
 })

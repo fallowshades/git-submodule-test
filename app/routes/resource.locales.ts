@@ -1,6 +1,6 @@
 import { cacheHeader } from "pretty-cache-header"
 import { z } from "zod/v4"
-import { type Language, type Namespace, resources } from "~/localization/resource"
+import { type Language, type Namespace, resources } from "~/routes/localization/resource"
 import { globalAppContext } from "~/server/context"
 import type { Route } from "./+types/resource.locales"
 
@@ -31,3 +31,37 @@ export async function loader({ request, context }: Route.LoaderArgs) {
 
 	return Response.json(namespaces[ns], { headers })
 }
+
+
+// import type { Route } from "./+types/resource.locales";
+// import fs from "fs/promises";
+// import path from "path";
+
+// export async function loader({ params }: Route.LoaderArgs) {
+//   const { lang, ns } = params;
+
+//   if (!lang || !ns) {
+//     throw new Response("Missing language or namespace parameters", { status: 400 });
+//   }
+
+//   // Construct the path to the JSON translation file
+//   const filePath = path.resolve(process.cwd(), "resources/locales", lang, `${ns}.json`);
+
+//   try {
+//     const fileContents = await fs.readFile(filePath, "utf-8");
+//     const jsonData = JSON.parse(fileContents);
+
+//     return new Response(JSON.stringify(jsonData), {
+//       status: 200,
+//       headers: {
+//         "Content-Type": "application/json",
+//         "Cache-Control": "public, max-age=3600" // Cache for 1 hour
+//       },
+//     });
+//   } catch (error) {
+//     console.error("Error loading locale file:", error);
+//     throw new Response("Locale file not found", { status: 404 });
+//   }
+// }
+
+// No default export makes this a resource route (no UI)

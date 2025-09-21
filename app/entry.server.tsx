@@ -10,9 +10,9 @@ import {
 	type RouterContextProvider,
 	ServerRouter,
 } from "react-router"
-import i18n from "./localization/i18n" // your i18n configuration file
-import i18nextOpts from "./localization/i18n.server"
-import { resources } from "./localization/resource"
+import i18n from "./routes/localization/i18n" // your i18n configuration file
+import i18nextOpts from "./routes/localization/i18n.server"
+import { resources } from "./routes/localization/resource"
 import { globalAppContext } from "./server/context"
 
 // Reject all pending promises from handler functions after 10 seconds
