@@ -63,5 +63,3 @@ export async function loader({ request, context }: Route.LoaderArgs) {
 //     throw new Response("Locale file not found", { status: 404 });
 //   }
 // }
-
-// No default export makes this a resource route (no UI)

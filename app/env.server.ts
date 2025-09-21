@@ -3,6 +3,12 @@ import { z } from "zod/v4"
 const envSchema = z.object({
 	NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
 	APP_ENV: z.enum(["development", "staging", "production"]).default("development"),
+	ISSUER_HOST: z.enum([
+		"http://localhost:5173",
+		"https://auth.yourdomain.com","http://localhost:4280"]),
+	RESOURCE_HOST: z.enum([
+		"http://localhost:4280",
+		"https://api.yourdomain.com","http://localhost:3000"]),
 })
 
 type ServerEnv = z.infer<typeof envSchema>
