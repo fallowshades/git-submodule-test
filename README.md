@@ -85,3 +85,7 @@ After it is run it will remove itself from the package.json.
 pnpm run dev
 ```
 6. Happy coding!
+
+####
+
+pnpm add remix-utils
