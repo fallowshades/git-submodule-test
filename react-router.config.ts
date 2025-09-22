@@ -7,6 +7,7 @@ export default {
 		unstable_optimizeDeps: true,
 		v8_middleware: true,
 		// v8_middleware:true
+		unstable_subResourceIntegrity: true,
 	},
 } satisfies Config
 

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import type { MetaFunction } from "react-router"
+import { Link, type MetaFunction } from "react-router"
 import { convertDateToUserTz } from "~/utils/dates"
 import type { Route } from "./+types/_index"
 
@@ -56,7 +56,8 @@ export default function Index({ loaderData }: Route.ComponentProps) {
 				</div>
 			</div>
 
-			<div className="mt-4 w-full text-center text-2xl">{t("hi")}</div>
+			<div className="mt-4 w-full text-center text-2xl">{t("hi")} <Link to='curriculums' className="red">Curriculums</Link></div>
+			
 			<section className="absolute bottom-1 mb-2 w-full pt-2 pb-1 text-center sm:bottom-2 sm:pb-3 md:mt-0 md:mb-0">
 				Crafted with ❤️ / Time without timezone mismatch {timezoneDate}
 			</section>

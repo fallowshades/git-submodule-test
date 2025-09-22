@@ -8,7 +8,9 @@ const envSchema = z.object({
 		"https://auth.yourdomain.com","http://localhost:4280"]),
 	RESOURCE_HOST: z.enum([
 		"http://localhost:4280",
-		"https://api.yourdomain.com","http://localhost:3000"]),
+		"https://api.yourdomain.com", "http://localhost:3000"]),
+	SESSION_SECRET: z.string().min(32),
+	
 })
 
 type ServerEnv = z.infer<typeof envSchema>

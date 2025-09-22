@@ -22,13 +22,13 @@ import { crud, index, route,layout } from "@edgefirst-dev/crud-routes";
 import type { RouteConfig } from "@react-router/dev/routes";
 
 export default [
-
-	// ...crud("contacts"),
+  ...crud('contacts'),
+	 ...crud("curriculums"),
 
 	route("healthcheck", "routes/healthcheck.tsx"),
 	route("robots.txt", "routes/robots[.]txt.ts"),
 	route("sitemap-index.xml", "routes/sitemap-index[.]xml.ts"),
-	// route("sitemap-:section.xml", "routes/sitemap-$lang[.]xml.ts"),
+	route("sitemap-:section.xml", "routes/sitemap-$lang[.]xml.ts"),
 	route("localization/resource", "routes/localization/resource.ts"),
 	route("resource.locales", "routes/resource.locales.ts"),// or for nested dynamic
 // route("resources/locales/:lang/:ns", "routes/resources/locales/en/common.json"),
